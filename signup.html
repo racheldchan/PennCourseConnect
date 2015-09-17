@@ -1,0 +1,45 @@
+{% extends "test.html" %}
+{% block content %}
+    <div id='signup'>
+      <p id='signup-button'>Sign Up</p>
+      <div id='signup-form'>
+        <form role='form' action="{{ url_for('register') }}" method=post>
+          {{ form.hidden_tag() }}
+          <div class='form-group'>
+            {{ form.firstName.label }}
+            {{ form.firstName(class_="form-control", placeholder="First name") }}
+          </div>
+          <div class='form-group'>
+            {{ form.lastName.label }}
+            {{ form.lastName(class_="form-control", placeholder="Last name") }}
+          </div>
+          <div class='form-group'>
+            {{ form.email.label }}
+            {{ form.email(class_="form-control", placeholder="Email") }}
+          </div>
+          <div class='form-group'>
+            {{ form.password.label }}
+            {{ form.password(class_="form-control", placeholder="New password") }}
+          </div>
+          <div class='form-group'>
+            {{ form.major.label }}
+            {{ form.major(class_="form-control", placeholder="Major") }}
+          </div>
+          <div class='form-group'>
+            {{ form.year.label }}
+            {{ form.year(class_="form-control", placeholder="Year") }}
+          </div>
+          <div class='form-group'>
+            {{ form.gener.label }}
+          </div>
+          <div class='form-group'>
+            {{ form.classes}}
+          </div>
+          <div class='form-group'>
+            {{ form.bio.label }}
+            {{ form.bio(class_="form-control", placeholder="Tell us your life story.") }}
+          </div>
+        </form>
+      </div>
+    </div>
+    {% endblock %}
